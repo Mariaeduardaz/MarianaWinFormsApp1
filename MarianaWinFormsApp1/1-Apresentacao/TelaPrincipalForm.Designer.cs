@@ -53,7 +53,7 @@
             this.executarTesteToolStripMenuItem});
             this.toolBox1.Location = new System.Drawing.Point(0, 0);
             this.toolBox1.Name = "toolBox1";
-            this.toolBox1.Size = new System.Drawing.Size(654, 33);
+            this.toolBox1.Size = new System.Drawing.Size(712, 33);
             this.toolBox1.TabIndex = 0;
             this.toolBox1.Text = "menuStrip1";
             // 
@@ -103,7 +103,7 @@
             this.btnExcluir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(654, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(712, 44);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -142,7 +142,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Location = new System.Drawing.Point(0, 583);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(654, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(712, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -150,7 +150,7 @@
             // 
             this.PanelRegistros.Location = new System.Drawing.Point(12, 80);
             this.PanelRegistros.Name = "PanelRegistros";
-            this.PanelRegistros.Size = new System.Drawing.Size(642, 482);
+            this.PanelRegistros.Size = new System.Drawing.Size(688, 482);
             this.PanelRegistros.TabIndex = 3;
             // 
             // TelaPrincipalForm
@@ -158,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(654, 605);
+            this.ClientSize = new System.Drawing.Size(712, 605);
             this.Controls.Add(this.PanelRegistros);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);

@@ -8,12 +8,12 @@ namespace MarianaWinFormsApp1
 {
     
     
-        public class Repositorio<T> where T : EntidadeBase
+        public class IRepositorio<T> where T : EntidadeBase
         {
             protected readonly List<T> registros;
             protected int contID;
 
-            public Repositorio()
+            public IRepositorio()
             {
                 registros = new List<T>();
             }

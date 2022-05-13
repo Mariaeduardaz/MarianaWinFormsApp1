@@ -31,11 +31,7 @@ namespace MarianaWinFormsApp1
                 }
             
         }
-        public Disciplina_1 disciplina
-        {
-            get { return _disciplina; }
-            set { _disciplina = value; }
-        }
+       
 
 
         public void btnGravar_Click(object sender, EventArgs e)

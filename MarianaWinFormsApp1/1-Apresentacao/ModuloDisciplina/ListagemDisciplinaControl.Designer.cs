@@ -35,10 +35,11 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(36, 67);
+            this.listBox1.Location = new System.Drawing.Point(45, 90);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(594, 354);
+            this.listBox1.Size = new System.Drawing.Size(611, 379);
             this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // ListagemDisciplinaControl
             // 
@@ -46,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.listBox1);
             this.Name = "ListagemDisciplinaControl";
-            this.Size = new System.Drawing.Size(829, 549);
+            this.Size = new System.Drawing.Size(711, 486);
             this.ResumeLayout(false);
 
         }

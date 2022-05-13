@@ -44,7 +44,7 @@ namespace MarianaWinFormsApp1.ModuloMateria
             _materia!.Nome = txtNumeroMateria.Text;
             _materia!.Numero = txtNomeMateria.Text;
             _materia!.Serie = comboBoxSerieMateria.Text;
-              _materia.Disciplina = comboBoxDisciplinaMateria.Text;
+             _materia.Disciplina = comboBoxDisciplinaMateria.Text;
 
         }
 

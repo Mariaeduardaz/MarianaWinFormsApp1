@@ -8,18 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Compartilhado\NewFolder\**" />
-    <EmbeddedResource Remove="Compartilhado\NewFolder\**" />
-    <None Remove="Compartilhado\NewFolder\**" />
+    <Compile Remove="2-Dominio\NewFolder\**" />
+    <EmbeddedResource Remove="2-Dominio\NewFolder\**" />
+    <None Remove="2-Dominio\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="CadastroMateria.cs" />
     <Compile Remove="CadastroMateria.Designer.cs" />
     <Compile Remove="Class1.cs" />
-    <Compile Remove="Compartilhado\Disciplina.cs" />
-    <Compile Remove="Compartilhado\Materia.cs" />
-    <Compile Remove="Compartilhado\Questao.cs" />
+    <Compile Remove="2-Dominio\Disciplina.cs" />
+    <Compile Remove="2-Dominio\Materia.cs" />
+    <Compile Remove="2-Dominio\Questao.cs" />
     <Compile Remove="Disciplina.cs" />
     <Compile Remove="Materia.cs" />
     <Compile Remove="Questao.cs" />
