@@ -40,10 +40,9 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PanelRegistros = new System.Windows.Forms.Panel();
             this.toolBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolBox1
@@ -54,7 +53,7 @@
             this.executarTesteToolStripMenuItem});
             this.toolBox1.Location = new System.Drawing.Point(0, 0);
             this.toolBox1.Name = "toolBox1";
-            this.toolBox1.Size = new System.Drawing.Size(796, 33);
+            this.toolBox1.Size = new System.Drawing.Size(654, 33);
             this.toolBox1.TabIndex = 0;
             this.toolBox1.Text = "menuStrip1";
             // 
@@ -65,8 +64,8 @@
             this.MateriaMenuItem,
             this.questãoMenuItem1});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(129, 29);
-            this.cadastroToolStripMenuItem.Text = "Cadastrando";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(141, 29);
+            this.cadastroToolStripMenuItem.Text = "Fazer cadastro";
             // 
             // disciplinaMenuItem
             // 
@@ -104,7 +103,7 @@
             this.btnExcluir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(796, 44);
+            this.toolStrip1.Size = new System.Drawing.Size(654, 44);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -141,29 +140,26 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 549);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 583);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(796, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(654, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // dataGridView1
+            // PanelRegistros
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 80);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 466);
-            this.dataGridView1.TabIndex = 3;
+            this.PanelRegistros.Location = new System.Drawing.Point(12, 80);
+            this.PanelRegistros.Name = "PanelRegistros";
+            this.PanelRegistros.Size = new System.Drawing.Size(642, 482);
+            this.PanelRegistros.TabIndex = 3;
             // 
             // TelaPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(796, 571);
-            this.Controls.Add(this.dataGridView1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(654, 605);
+            this.Controls.Add(this.PanelRegistros);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.toolBox1);
@@ -174,7 +170,6 @@
             this.toolBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +188,8 @@
         private System.Windows.Forms.ToolStripButton btnInserir;
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnExcluir;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView txtbox;
+       
+        private System.Windows.Forms.Panel PanelRegistros;
     }
 }

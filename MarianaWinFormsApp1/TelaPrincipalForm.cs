@@ -1,4 +1,5 @@
-﻿using MarianaWinFormsApp1.ModuloDisciplina;
+﻿using MarianaWinFormsApp1.Compartilhado;
+using MarianaWinFormsApp1.ModuloDisciplina;
 using MarianaWinFormsApp1.ModuloMateria;
 using MarianaWinFormsApp1.ModuloQuestao;
 using System;
@@ -15,6 +16,7 @@ namespace MarianaWinFormsApp1
 {
     public partial class TelaPrincipalForm : Form
     {
+        private ConfiguracaoToolBoxBase configuracaoToolBox;
         public TelaPrincipalForm()
         {
             InitializeComponent();
@@ -22,52 +24,65 @@ namespace MarianaWinFormsApp1
 
         private void disciplinaMenuItem_Click(object sender, EventArgs e)
         {
-            ConfiguracaoToolboxDisciplina configuracao = new ConfiguracaoToolboxDisciplina();
+            CadastroDisciplina cadastrodisciplina = new CadastroDisciplina();
+            cadastrodisciplina.ShowDialog();
 
-            btnInserir.ToolTipText = configuracao.TooltipInserir;
-            btnEditar.ToolTipText = configuracao.TooltipEditar;
-            btnExcluir.ToolTipText= configuracao.TooltipExcluir;
+
+            ConfigurarToolbox( new ConfiguracaoToolboxDisciplina());
 
             ListagemDisciplinaControl listagem = new ListagemDisciplinaControl();
-
+            
             listagem.Dock = DockStyle.Fill;
-                       
-            panelRegistros.Controls.Clear();
 
-            panelRegistros.Controls.Add(listagem);
+            PanelRegistros.Controls.Clear();
+
+            PanelRegistros.Controls.Add(listagem);
+        }
+
+        private void ConfigurarToolbox(ConfiguracaoToolBoxBase configuracao)
+        {
+            btnInserir.ToolTipText = configuracao.TooltipInserir;
+            btnEditar.ToolTipText = configuracao.TooltipEditar;
+            btnExcluir.ToolTipText = configuracao.TooltipExcluir;
         }
 
         private void MateriaMenuItem_Click(object sender, EventArgs e)
         {
-            ConfiguracaoToolBoxMateria configuracao = new ConfiguracaoToolBoxMateria();
 
-            btnInserir.ToolTipText = configuracao.TooltipInserir;
-            btnEditar.ToolTipText = configuracao.TooltipEditar;
-            btnExcluir.ToolTipText = configuracao.TooltipExcluir;
+            CadastroMateria cadastromateria = new CadastroMateria();
+            cadastromateria.ShowDialog();
+
+            ConfigurarToolbox(new ConfiguracaoToolBoxMateria());
 
             ListagemMateriaControl listagem = new ListagemMateriaControl();
 
-            panelRegistros.Controls.Clear();
+            PanelRegistros.Controls.Clear();
 
-            panelRegistros.Controls.Add(listagem);
+            PanelRegistros.Controls.Add(listagem);
+            
         }
 
         private void questãoMenuItem1_Click(object sender, EventArgs e)
         {
-            ConfiguracaoToolBoxQuestao configuracao = new ConfiguracaoToolBoxQuestao();
+            CadastroQuestao cadastroquestao = new CadastroQuestao();
+            cadastroquestao.ShowDialog();
 
-            btnInserir.ToolTipText = configuracao.TooltipInserir;
-            btnEditar.ToolTipText = configuracao.TooltipEditar;
-            btnExcluir.ToolTipText = configuracao.TooltipExcluir;
+            ConfigurarToolbox(new ConfiguracaoToolBoxQuestao());
 
             ListagemQuestaoControl listagem = new ListagemQuestaoControl();
 
-            panelRegistros.Controls.Clear();
+            PanelRegistros.Controls.Clear();
 
-            panelRegistros.Controls.Add(listagem);
+            PanelRegistros.Controls.Add(listagem);
+            
         }
 
         private void panelRegistros_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

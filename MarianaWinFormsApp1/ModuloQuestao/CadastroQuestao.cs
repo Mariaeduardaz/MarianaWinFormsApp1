@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MarianaWinFormsApp1.ModuloQuestao
 {
-    public partial class ListagemQuestaoControl : UserControl
+    public partial class CadastroQuestao : Form
     {
-        public ListagemQuestaoControl()
+        public CadastroQuestao()
         {
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

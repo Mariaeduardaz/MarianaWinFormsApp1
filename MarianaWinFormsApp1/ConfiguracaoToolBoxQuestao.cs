@@ -1,4 +1,5 @@
-﻿using MarianaWinFormsApp1.ModuloMateria;
+﻿using MarianaWinFormsApp1.Compartilhado;
+
 
 namespace MarianaWinFormsApp1.ModuloQuestao
 {

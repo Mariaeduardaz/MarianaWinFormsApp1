@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarianaWinFormsApp1.ModuloQuestao
+namespace MarianaWinFormsApp1
 {
-    public partial class ListagemQuestaoControl : UserControl
+    public partial class CadastroMateria : Form
     {
-        public ListagemQuestaoControl()
+        public CadastroMateria()
         {
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

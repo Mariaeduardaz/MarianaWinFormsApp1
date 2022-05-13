@@ -1,4 +1,4 @@
-﻿namespace MarianaWinFormsApp1.ModuloMateria
+﻿namespace MarianaWinFormsApp1.Compartilhado
 {
     public abstract class  ConfiguracaoToolBoxBase
     {
