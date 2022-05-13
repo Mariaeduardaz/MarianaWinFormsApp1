@@ -1,4 +1,4 @@
-﻿namespace MarianaWinFormsApp1
+﻿namespace MarianaWinFormsApp1.Apresentacao.ModuloDisciplina
 {
     partial class CadastroDisciplina
     {

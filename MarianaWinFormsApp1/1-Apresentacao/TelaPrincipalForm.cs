@@ -1,4 +1,9 @@
-﻿using MarianaWinFormsApp1.Compartilhado;
+﻿using MarianaWinFormsApp1._1_Apresentacao.Compartilhado;
+using MarianaWinFormsApp1.Apresentacao.ModuloDisciplina;
+using MarianaWinFormsApp1.Apresentacao.ModuloMateria;
+using MarianaWinFormsApp1.Apresentacao.ModuloQuestao;
+using MarianaWinFormsApp1.Compartilhado;
+using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
 using MarianaWinFormsApp1.ModuloDisciplina;
 using MarianaWinFormsApp1.ModuloMateria;
 using MarianaWinFormsApp1.ModuloQuestao;
@@ -17,26 +22,49 @@ namespace MarianaWinFormsApp1
     public partial class TelaPrincipalForm : Form
     {
         private ConfiguracaoToolBoxBase configuracaoToolBox;
+        private ControladorBase controlador;
+        private Dictionary<string, ControladorBase> controladores;
+        private DataContext contextoDados;
+
         public TelaPrincipalForm()
         {
             InitializeComponent();
+            Instancia = this;
+
+            labelRodape.Text = string.Empty;
+            labelTipoCadastro.Text = string.Empty;
+
+            this.contextoDados = contextoDados;
+
+            InicializarControladores();
+        }
+        public static TelaPrincipalForm Instancia
+        {
+            get;
+            private set;
         }
 
         private void disciplinaMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroDisciplina cadastrodisciplina = new CadastroDisciplina();
+            CadastroDisciplina cadastrodisciplina = GetCadastrodisciplina();
             cadastrodisciplina.ShowDialog();
 
 
-            ConfigurarToolbox( new ConfiguracaoToolboxDisciplina());
+            ConfigurarToolbox(new ConfiguracaoToolboxDisciplina());
 
             ListagemDisciplinaControl listagem = new ListagemDisciplinaControl();
-            
+
             listagem.Dock = DockStyle.Fill;
 
             PanelRegistros.Controls.Clear();
 
             PanelRegistros.Controls.Add(listagem);
+        }
+      
+
+        private static CadastroDisciplina GetCadastrodisciplina()
+        {
+            return new CadastroDisciplina(new Disciplina() );
         }
 
         private void ConfigurarToolbox(ConfiguracaoToolBoxBase configuracao)
@@ -54,7 +82,7 @@ namespace MarianaWinFormsApp1
 
             ConfigurarToolbox(new ConfiguracaoToolBoxMateria());
 
-            ListagemMateriaControl listagem = new ListagemMateriaControl();
+            FormularioMateriaControl listagem = new FormularioMateriaControl();
 
             PanelRegistros.Controls.Clear();
 
@@ -83,6 +111,16 @@ namespace MarianaWinFormsApp1
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PanelRegistros_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
         {
 
         }

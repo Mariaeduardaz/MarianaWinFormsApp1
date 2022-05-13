@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MarianaWinFormsApp1.Dominio.Compartilhado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarianaWinFormsApp1
+namespace MarianaWinFormsApp1.Dominio.ModuloDisciplina
 {
-    public class Disciplina_1 : EntidadeBase
+    public class Disciplina : EntidadeBase<Disciplina>
     {
         private string nome;
         public string Nome { get { return nome; } set { nome = value; } }

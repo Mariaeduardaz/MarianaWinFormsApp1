@@ -116,6 +116,7 @@
             this.btnInserir.Padding = new System.Windows.Forms.Padding(5);
             this.btnInserir.Size = new System.Drawing.Size(95, 39);
             this.btnInserir.Text = "✛ Inserir";
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnEditar
             // 
@@ -152,6 +153,7 @@
             this.PanelRegistros.Name = "PanelRegistros";
             this.PanelRegistros.Size = new System.Drawing.Size(688, 482);
             this.PanelRegistros.TabIndex = 3;
+            this.PanelRegistros.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelRegistros_Paint_1);
             // 
             // TelaPrincipalForm
             // 

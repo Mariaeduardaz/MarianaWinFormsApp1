@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarianaWinFormsApp1.ModuloDisciplina
+namespace MarianaWinFormsApp1.Apresentacao.ModuloDisciplina
 {
     public partial class ListagemDisciplinaControl : UserControl
     {
         public ListagemDisciplinaControl()
         {
             InitializeComponent();
-
-            
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

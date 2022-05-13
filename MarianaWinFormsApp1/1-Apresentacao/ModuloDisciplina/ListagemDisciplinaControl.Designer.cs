@@ -1,4 +1,4 @@
-﻿namespace MarianaWinFormsApp1.ModuloDisciplina
+﻿namespace MarianaWinFormsApp1.Apresentacao.ModuloDisciplina
 {
     partial class ListagemDisciplinaControl
     {
@@ -28,26 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridDisciplina = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisciplina)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // dataGridDisciplina
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(45, 90);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(611, 379);
-            this.listBox1.TabIndex = 4;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.dataGridDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDisciplina.Location = new System.Drawing.Point(27, 57);
+            this.dataGridDisciplina.Name = "dataGridDisciplina";
+            this.dataGridDisciplina.RowHeadersWidth = 62;
+            this.dataGridDisciplina.RowTemplate.Height = 33;
+            this.dataGridDisciplina.Size = new System.Drawing.Size(660, 414);
+            this.dataGridDisciplina.TabIndex = 5;
             // 
             // ListagemDisciplinaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.dataGridDisciplina);
             this.Name = "ListagemDisciplinaControl";
             this.Size = new System.Drawing.Size(711, 486);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDisciplina)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,6 +58,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage listDisciplina;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView dataGridDisciplina;
     }
 }

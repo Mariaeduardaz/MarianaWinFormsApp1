@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarianaWinFormsApp1.Dominio.ModuloMateria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarianaWinFormsApp1.ModuloMateria
+namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
 {
-    public partial class ListagemMateriaControl : UserControl
+    public partial class FormularioMateriaControl : UserControl
     {
-        public ListagemMateriaControl()
+        private Materia materia;
+        public FormularioMateriaControl()
         {
             InitializeComponent();
+        }
+
+        private void FormularioMateriaControl_Load(object sender, EventArgs e)
+        {
+            this.materia = new Materia();
+
         }
     }
 }

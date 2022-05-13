@@ -1,12 +1,15 @@
-﻿using System;
+﻿using MarianaWinFormsApp1.Dominio.Compartilhado;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarianaWinFormsApp1
+
+
+namespace MarianaWinFormsApp1.Dominio.ModuloMateria
 {
-    public class Materia_1 : EntidadeBase
+    public class Materia : EntidadeBase<Materia>
     {
 
         private string numero;
@@ -17,8 +20,7 @@ namespace MarianaWinFormsApp1
         public string Numero { get { return numero; } set { numero = value; } }
         public string Nome { get { return nome; } set { nome = value; } }
         public string Disciplina { get { return disciplina; } set { disciplina = value; } }
-        public string Serie { get; set; }
-
+        public string Serie { get { return serie; } set { serie = value; } }
         public override string ToString()
         {
 

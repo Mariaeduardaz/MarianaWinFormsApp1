@@ -1,4 +1,4 @@
-﻿namespace MarianaWinFormsApp1.ModuloQuestao
+﻿namespace MarianaWinFormsApp1.Apresentacao.ModuloQuestao
 {
     partial class CadastroQuestao
     {

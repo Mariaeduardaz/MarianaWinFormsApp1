@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarianaWinFormsApp1.Dominio.ModuloMateria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarianaWinFormsApp1.ModuloMateria
+namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
 {
     public partial class CadastroMateria : Form
     {
-        private Materia_1? _materia;
-        public CadastroMateria(Materia_1 materia)
+        private Materia? _materia;
+        public CadastroMateria(Materia materia)
         {
             InitializeComponent();
 

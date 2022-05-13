@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarianaWinFormsApp1.ModuloQuestao
+namespace MarianaWinFormsApp1.Apresentacao.ModuloQuestao
 {
     public partial class CadastroQuestao : Form
     {

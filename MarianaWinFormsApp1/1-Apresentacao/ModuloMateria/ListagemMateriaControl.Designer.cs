@@ -1,6 +1,6 @@
-﻿namespace MarianaWinFormsApp1.ModuloMateria
+﻿namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
 {
-    partial class ListagemMateriaControl
+    partial class FormularioMateriaControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridMateria = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMateria)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // dataGridMateria
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(25, 60);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(594, 354);
-            this.listBox1.TabIndex = 3;
+            this.dataGridMateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMateria.Location = new System.Drawing.Point(3, 61);
+            this.dataGridMateria.Name = "dataGridMateria";
+            this.dataGridMateria.RowHeadersWidth = 62;
+            this.dataGridMateria.RowTemplate.Height = 33;
+            this.dataGridMateria.Size = new System.Drawing.Size(665, 395);
+            this.dataGridMateria.TabIndex = 0;
             // 
-            // ListagemMateriaControl
+            // FormularioMateriaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBox1);
-            this.Name = "ListagemMateriaControl";
+            this.Controls.Add(this.dataGridMateria);
+            this.Name = "FormularioMateriaControl";
             this.Size = new System.Drawing.Size(671, 459);
+            this.Load += new System.EventHandler(this.FormularioMateriaControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMateria)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBox1;
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridMateria;
     }
 }
