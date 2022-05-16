@@ -1,6 +1,7 @@
 ﻿using MarianaWinFormsApp1._1_Apresentacao.Compartilhado;
 using MarianaWinFormsApp1._1_Apresentacao.ModuloDisciplina;
 using MarianaWinFormsApp1._1_Apresentacao.ModuloMateria;
+using MarianaWinFormsApp1._1_Apresentacao.ModuloQuestao;
 using MarianaWinFormsApp1._3_Infra.ModuloDisciplina;
 using MarianaWinFormsApp1._3_Infra.ModuloMateria;
 using MarianaWinFormsApp1._3_Infra.ModuloQuestao;

@@ -78,16 +78,12 @@ namespace MarianaWinFormsApp1._3_Infra.Compartilhado
 
             return resultadoValidacao;
         }
-
+       
         public virtual List<T> SelecionarTodos()
         {
             return ObterRegistros();
         }
-        public virtual T SelecionarPorNumero(int numero)
-        {
-            return ObterRegistros()
-                .FirstOrDefault(x => x.Numero == numero);
-        }
+       
 
 
         public abstract List<T> ObterRegistros();

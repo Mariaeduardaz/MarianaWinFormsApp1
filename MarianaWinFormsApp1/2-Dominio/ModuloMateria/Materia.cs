@@ -1,4 +1,5 @@
 ﻿using MarianaWinFormsApp1.Dominio.Compartilhado;
+using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,14 @@ namespace MarianaWinFormsApp1.Dominio.ModuloMateria
 
         public int Numero { get { return numero; } set { numero = value; } }
         public string Nome { get { return nome; } set { nome = value; } }
-        public string Disciplina { get { return disciplina; } set { disciplina = value; } }
+        public Disciplina Disciplina { get; set; }
         public string Serie { get { return serie; } set { serie = value; } }
 
         public override void Atualizar(Materia registro)
         {
-            throw new NotImplementedException();
+            this.Nome = registro.Nome;
+            this.Serie = registro.Serie;
+            this.Disciplina = registro.Disciplina;
         }
         public Materia Clone()
         {

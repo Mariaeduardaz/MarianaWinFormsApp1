@@ -1,3 +1,4 @@
+using MarianaWinFormsApp1.Infra.Compartilhado;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace MarianaWinFormsApp1
 {
     internal static class Program
     {
+        static DataContext contexto;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -17,7 +19,7 @@ namespace MarianaWinFormsApp1
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaPrincipalForm());
+            Application.Run(new TelaPrincipalForm(contexto));
         }
     }
 }

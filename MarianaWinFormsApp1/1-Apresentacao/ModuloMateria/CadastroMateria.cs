@@ -70,10 +70,10 @@ namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
             _materia!.Nome = txtNumeroMateria.Text;
             
             _materia!.Serie = comboBoxSerieMateria.Text;
-             _materia.Disciplina = comboBoxDisciplinaMateria.Text;
+            Materia.Disciplina = (Disciplina)comboBoxDisciplinaMateria.SelectedItem;
 
-            var resultadoValidacao = GravarRegistro!(Materia); 
-
+            var resultadoValidacao = GravarRegistro!(Materia);
+            
             if (resultadoValidacao.IsValid == false)
             {
                 string erro = resultadoValidacao.Errors[0].ErrorMessage;

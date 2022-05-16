@@ -23,7 +23,7 @@ namespace MarianaWinFormsApp1._1_Apresentacao.ModuloQuestao
 
         private ListagemQuestaoControl _tabelaQuestao;
 
-        public ControladorQuestao(RepositorioEmArquivoQuestao repositorioQuestao, RepositorioEmArquivoMateria repositorioMateria, RepositorioDisciplinaEmArquivo repositorioDisciplina)
+        public ControladorQuestao(RepositorioEmArquivoQuestao repositorioQuestao, RepositorioEmArquivoMateria repositorioMateria, RepositorioEmArquivoDisciplina repositorioDisciplina)
         {
             this._repositorioQuestao = repositorioQuestao;
             this._repositorioMateria = repositorioMateria;
@@ -87,7 +87,12 @@ namespace MarianaWinFormsApp1._1_Apresentacao.ModuloQuestao
 
         public override UserControl ObtemListagem()
         {
-            throw new NotImplementedException();
+            if (_tabelaQuestao == null)
+                _tabelaQuestao = new ListagemQuestaoControl();
+
+            CarregarQuestoes();
+
+            return _tabelaQuestao;
         }
 
         private void CarregarQuestoes()

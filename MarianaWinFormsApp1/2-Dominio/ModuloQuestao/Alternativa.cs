@@ -22,5 +22,10 @@ namespace MarianaWinFormsApp1._2_Dominio.ModuloQuestao
         {
             return Opcao;
         }
+
+        public override string Validar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

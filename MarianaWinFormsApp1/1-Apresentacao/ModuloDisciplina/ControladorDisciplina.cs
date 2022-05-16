@@ -3,6 +3,7 @@ using MarianaWinFormsApp1._3_Infra.ModuloDisciplina;
 using MarianaWinFormsApp1._3_Infra.ModuloMateria;
 using MarianaWinFormsApp1.Apresentacao.ModuloDisciplina;
 using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
+using MarianaWinFormsApp1.Dominio.ModuloMateria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
