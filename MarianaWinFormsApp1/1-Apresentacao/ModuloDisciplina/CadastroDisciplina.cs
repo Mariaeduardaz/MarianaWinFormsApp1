@@ -15,21 +15,20 @@ namespace MarianaWinFormsApp1.Apresentacao.ModuloDisciplina
     public partial class CadastroDisciplina : Form
     {
         private Disciplina? _disciplina;
-               
+
+        public CadastroDisciplina()
+        {
+        }
+
         public CadastroDisciplina(Disciplina disciplina)
         {
             InitializeComponent();
 
-            _disciplina = disciplina;
-                if (disciplina != null)
-                {
-                    txtNomeDisciplina.Text = disciplina.Nome;
+            
                 
-                  
-                }
             
         }
-     
+        public Func<Disciplina, ValidationResult>? GravarRegistro { get; set; }
         public Disciplina Disciplina
         {
 
@@ -47,7 +46,7 @@ namespace MarianaWinFormsApp1.Apresentacao.ModuloDisciplina
 
         }
 
-        public Func<Disciplina, ValidationResult>? GravarRegistro { get; private set; }
+        
 
         public void btnGravar_Click(object sender, EventArgs e)
         {

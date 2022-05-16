@@ -1,4 +1,7 @@
-﻿using MarianaWinFormsApp1.Dominio.Compartilhado;
+﻿using MarianaWinFormsApp1._2_Dominio.ModuloQuestao;
+using MarianaWinFormsApp1.Dominio.Compartilhado;
+using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
+using MarianaWinFormsApp1.Dominio.ModuloMateria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,32 +12,35 @@ namespace MarianaWinFormsApp1.Dominio.ModuloQuestao
 {
     public class Questao : EntidadeBase<Questao>
     {
-        private string numeroDeQuestões;
-        private string disciplina;
-        private string materia;
-        private string enunciado;
-        private string resposta;
+        public string Enunciado { get; set; }
+        public Disciplina Disciplina { get; set; }
+        public Materia Materia { get; set; }
+        public List<Alternativa> Alternativa { get; set; }
 
-        public Questao()
+        public override void Atualizar(Questao registro)
         {
-
+            this.Enunciado = registro.Enunciado;
+            this.Disciplina = registro.Disciplina;
+            this.Materia = registro.Materia;
+            this.Alternativa = registro.Alternativa;
         }
 
-        public string NumeroDeQuestões { get { return numeroDeQuestões; } set { numeroDeQuestões = value; } }
-        public string Disciplina { get { return disciplina; } set { disciplina = value; } }
-        public string Materia { get { return materia; } set { materia = value; } }
-        public string Enunciado { get { return enunciado; } set { enunciado = value; } }
-        public string Resposta { get { return resposta; } set { resposta = value; } }
 
-        public override string ToString()
+        public Questao Clone()
         {
-
-            return $"NumeroDeQuestões: {NumeroDeQuestões} Disciplina: {Disciplina} Materia: {Materia} Enunciado: {Enunciado} Resposta: {Resposta} ";
+            return new Questao
+            {
+                Numero = this.Numero,
+                Enunciado = this.Enunciado,
+                Disciplina = this.Disciplina,
+                Materia = this.Materia,
+                Alternativa = this.Alternativa
+            };
         }
+
         public override string Validar()
         {
-            StringBuilder sb = new();
-            return sb.ToString().Trim();
+            throw new NotImplementedException();
         }
     }
 }

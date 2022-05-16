@@ -1,7 +1,10 @@
-﻿using MarianaWinFormsApp1.Dominio.ModuloMateria;
+﻿using FluentValidation.Results;
+using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
+using MarianaWinFormsApp1.Dominio.ModuloMateria;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,19 +17,26 @@ namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
     public partial class CadastroMateria : Form
     {
         private Materia? _materia;
+        public List<Disciplina> Disciplinas { get; set; }
         public CadastroMateria(Materia materia)
         {
             InitializeComponent();
 
-            _materia = materia;
-            if (materia != null)
+           
+        }
+        public Materia Materia
+        {
+            get
             {
-                txtNumeroMateria.Text = materia.Numero;
-                txtNomeMateria.Text = materia.Nome;
-                comboBoxDisciplinaMateria.Text = materia.Disciplina;
-                comboBoxSerieMateria.Text = materia.Serie;
-                
-                
+                return _materia!;
+            }
+            set
+            {
+                _materia = value;
+                txtNumeroMateria.Text = _materia.Numero.ToString();
+                txtNomeMateria.Text = _materia.Nome;
+                comboBoxSerieMateria.SelectedItem = _materia.Serie;
+                comboBoxDisciplinaMateria.SelectedItem = _materia.Disciplina;
             }
         }
 
@@ -34,18 +44,44 @@ namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
         {
             InitializeComponent();
         }
+        public CadastroMateria(List<Disciplina> disciplinas)
+        {
+            InitializeComponent();
+            this.Disciplinas = disciplinas;
+            CarregarDisciplinas();
+            comboBoxSerieMateria.SelectedIndex = 0;
+        }
+        private void CarregarDisciplinas()
+        {
+            foreach (var disciplina in Disciplinas)
+            {
+                comboBoxDisciplinaMateria.Items.Add(disciplina);
+            }
+        }
+
 
         private void comboBoxSerieMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
+        public Func<Materia, ValidationResult>? GravarRegistro { get; set; }
         private void btnGravar_Click(object sender, EventArgs e)
         {
             _materia!.Nome = txtNumeroMateria.Text;
-            _materia!.Numero = txtNomeMateria.Text;
+            
             _materia!.Serie = comboBoxSerieMateria.Text;
              _materia.Disciplina = comboBoxDisciplinaMateria.Text;
+
+            var resultadoValidacao = GravarRegistro!(Materia); 
+
+            if (resultadoValidacao.IsValid == false)
+            {
+                string erro = resultadoValidacao.Errors[0].ErrorMessage;
+
+                TelaPrincipalForm.Instancia!.AtualizarRodape(erro);
+
+                DialogResult = DialogResult.None;
+            }
 
         }
 

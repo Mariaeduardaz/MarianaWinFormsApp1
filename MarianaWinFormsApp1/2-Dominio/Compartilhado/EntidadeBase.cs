@@ -10,8 +10,12 @@ namespace MarianaWinFormsApp1.Dominio.Compartilhado
     public abstract class EntidadeBase<T>
     {
 
-        public int id;
+       
         public abstract string Validar();
+
+        public abstract void Atualizar(T registro);
+
+        public int Numero { get; set; }
 
     }
 }

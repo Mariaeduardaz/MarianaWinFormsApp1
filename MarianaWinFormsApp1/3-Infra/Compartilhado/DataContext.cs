@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
+using MarianaWinFormsApp1.Dominio.ModuloMateria;
+using MarianaWinFormsApp1.Dominio.ModuloQuestao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,22 +13,44 @@ namespace MarianaWinFormsApp1.Infra.Compartilhado
     {
         private readonly ISerializador serializador;
 
-        
-        
-            Disciplina = new List<Disciplina>();
+        public DataContext()
+        {
+            Disciplinas = new List<Disciplina>();
+            Materias = new List<Materia>();
+            Questoes = new List<Questao>();
+        }
+        public DataContext(ISerializador serializador) : this()
+        {
+            this.serializador = serializador;
 
-            Contatos = new List<Contato>();
+            CarregarDados();
 
-            Compromissos = new List<Compromisso>();
 
-            Despesas = new List<Despesa>();
-        
-            
-        public List<Tarefa> Disciplina { get; set; }
+        }
+        public List<Disciplina> Disciplinas { get; set; }
 
-        public List<Contato> Contatos { get; set; }
+        public List<Materia> Materias { get; set; }
 
-        public List<Compromisso> Compromissos { get; set; }
+        public List<Questao> Questoes { get; set; }
+
+        private void CarregarDados()
+        {
+            var ctx = serializador.CarregarDadosDoArquivo();
+
+            if (ctx.Disciplinas.Any())
+                this.Disciplinas.AddRange(ctx.Disciplinas);
+
+            if (ctx.Materias.Any())
+                this.Materias.AddRange(ctx.Materias);
+
+            if (ctx.Questoes.Any())
+                this.Questoes.AddRange(ctx.Questoes);
+
+        }
+        public void GravarDados()
+        {
+            serializador.GravarDadosEmArquivo(this);
+        }
+
     }
-
 }

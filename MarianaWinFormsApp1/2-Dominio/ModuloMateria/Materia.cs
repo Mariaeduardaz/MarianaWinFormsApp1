@@ -12,15 +12,31 @@ namespace MarianaWinFormsApp1.Dominio.ModuloMateria
     public class Materia : EntidadeBase<Materia>
     {
 
-        private string numero;
+        private int numero;
         private string nome;
         private string disciplina;
         private string serie;
 
-        public string Numero { get { return numero; } set { numero = value; } }
+        public int Numero { get { return numero; } set { numero = value; } }
         public string Nome { get { return nome; } set { nome = value; } }
         public string Disciplina { get { return disciplina; } set { disciplina = value; } }
         public string Serie { get { return serie; } set { serie = value; } }
+
+        public override void Atualizar(Materia registro)
+        {
+            throw new NotImplementedException();
+        }
+        public Materia Clone()
+        {
+            return new Materia
+            {
+                Numero = this.Numero,
+                Disciplina = this.Disciplina,
+                Nome = this.Nome,
+                Serie = this.Serie
+               
+            };
+        }
         public override string ToString()
         {
 

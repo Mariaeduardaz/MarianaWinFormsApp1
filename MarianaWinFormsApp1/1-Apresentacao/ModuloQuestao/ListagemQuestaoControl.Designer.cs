@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridQuestao = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridQuestao)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridQuestao
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 363);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridQuestao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridQuestao.Location = new System.Drawing.Point(3, 78);
+            this.dataGridQuestao.Name = "dataGridQuestao";
+            this.dataGridQuestao.RowHeadersWidth = 62;
+            this.dataGridQuestao.RowTemplate.Height = 33;
+            this.dataGridQuestao.Size = new System.Drawing.Size(608, 363);
+            this.dataGridQuestao.TabIndex = 0;
             // 
             // ListagemQuestaoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridQuestao);
             this.Name = "ListagemQuestaoControl";
             this.Size = new System.Drawing.Size(616, 444);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridQuestao)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridQuestao;
     }
 }

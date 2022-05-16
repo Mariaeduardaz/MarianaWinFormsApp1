@@ -15,9 +15,17 @@ namespace MarianaWinFormsApp1.Dominio.ModuloDisciplina
         public override string ToString()
         {
 
-            return $"ID: {id} Nome: {Nome}";
+            return $" Nome: {Nome}";
         }
-
+        public Disciplina Clone()
+        {
+            return new Disciplina
+            {
+                
+                Nome = this.Nome
+            };
+        }
+        
         public override string Validar()
         {
             StringBuilder sb = new();
@@ -27,6 +35,10 @@ namespace MarianaWinFormsApp1.Dominio.ModuloDisciplina
             return sb.ToString().Trim();
         }
 
+        public override void Atualizar(Disciplina registro)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

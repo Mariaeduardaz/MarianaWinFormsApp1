@@ -41,8 +41,10 @@
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.PanelRegistros = new System.Windows.Forms.Panel();
+            this.labelRodape = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolBox1
@@ -141,9 +143,11 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 583);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelRodape});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 573);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(712, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(712, 32);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -154,6 +158,12 @@
             this.PanelRegistros.Size = new System.Drawing.Size(688, 482);
             this.PanelRegistros.TabIndex = 3;
             this.PanelRegistros.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelRegistros_Paint_1);
+            // 
+            // labelRodape
+            // 
+            this.labelRodape.Name = "labelRodape";
+            this.labelRodape.Size = new System.Drawing.Size(73, 25);
+            this.labelRodape.Text = "Rodapé";
             // 
             // TelaPrincipalForm
             // 
@@ -172,6 +182,8 @@
             this.toolBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +205,6 @@
         private System.Windows.Forms.DataGridView txtbox;
        
         private System.Windows.Forms.Panel PanelRegistros;
+        private System.Windows.Forms.ToolStripStatusLabel labelRodape;
     }
 }

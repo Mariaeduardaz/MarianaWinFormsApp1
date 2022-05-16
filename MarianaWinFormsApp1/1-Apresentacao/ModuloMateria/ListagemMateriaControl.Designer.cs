@@ -1,6 +1,6 @@
 ﻿namespace MarianaWinFormsApp1.Apresentacao.ModuloMateria
 {
-    partial class FormularioMateriaControl
+    partial class ListagemMateriaControl
     {
         /// <summary> 
         /// Required designer variable.

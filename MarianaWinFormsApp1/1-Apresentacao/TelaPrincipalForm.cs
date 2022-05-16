@@ -1,9 +1,15 @@
 ﻿using MarianaWinFormsApp1._1_Apresentacao.Compartilhado;
+using MarianaWinFormsApp1._1_Apresentacao.ModuloDisciplina;
+using MarianaWinFormsApp1._1_Apresentacao.ModuloMateria;
+using MarianaWinFormsApp1._3_Infra.ModuloDisciplina;
+using MarianaWinFormsApp1._3_Infra.ModuloMateria;
+using MarianaWinFormsApp1._3_Infra.ModuloQuestao;
 using MarianaWinFormsApp1.Apresentacao.ModuloDisciplina;
 using MarianaWinFormsApp1.Apresentacao.ModuloMateria;
 using MarianaWinFormsApp1.Apresentacao.ModuloQuestao;
 using MarianaWinFormsApp1.Compartilhado;
 using MarianaWinFormsApp1.Dominio.ModuloDisciplina;
+using MarianaWinFormsApp1.Infra.Compartilhado;
 using MarianaWinFormsApp1.ModuloDisciplina;
 using MarianaWinFormsApp1.ModuloMateria;
 using MarianaWinFormsApp1.ModuloQuestao;
@@ -26,18 +32,37 @@ namespace MarianaWinFormsApp1
         private Dictionary<string, ControladorBase> controladores;
         private DataContext contextoDados;
 
-        public TelaPrincipalForm()
+        public TelaPrincipalForm(DataContext contextoDados)
         {
             InitializeComponent();
             Instancia = this;
 
             labelRodape.Text = string.Empty;
-            labelTipoCadastro.Text = string.Empty;
+            
 
             this.contextoDados = contextoDados;
 
             InicializarControladores();
         }
+        public void AtualizarRodape(string mensagem)
+        {
+            labelRodape.Text = mensagem;
+        }
+
+        private void InicializarControladores()
+        {
+
+            var repositorioDisciplina = new RepositorioEmArquivoDisciplina(contextoDados);
+            var repositorioMateria = new RepositorioEmArquivoMateria(contextoDados);
+            var repositorioQuestao = new RepositorioEmArquivoQuestao(contextoDados);
+
+            controladores = new Dictionary<string, ControladorBase>();
+
+            controladores.Add("Disciplinas", new ControladorDisciplina(repositorioDisciplina, repositorioMateria));
+            controladores.Add("Matérias", new ControladorMateria(repositorioMateria, repositorioDisciplina));
+            controladores.Add("Questões", new ControladorQuestao(repositorioQuestao, repositorioMateria, repositorioDisciplina));
+        }
+
         public static TelaPrincipalForm Instancia
         {
             get;
@@ -82,7 +107,7 @@ namespace MarianaWinFormsApp1
 
             ConfigurarToolbox(new ConfiguracaoToolBoxMateria());
 
-            FormularioMateriaControl listagem = new FormularioMateriaControl();
+            ListagemMateriaControl listagem = new ListagemMateriaControl();
 
             PanelRegistros.Controls.Clear();
 
@@ -122,7 +147,7 @@ namespace MarianaWinFormsApp1
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-
+             controlador!.Inserir();
         }
     }
 }
